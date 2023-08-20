@@ -9,5 +9,7 @@ public class Room {
   public int Capacity { get; set; }
   public string? Image { get; set; }
   public int HotelId { get; set; }
+  [ ForeignKey("HotelId")]
   public Hotel? Hotel { get; set; }
+  public ICollection<Booking>? Bookings { get; set; }
 }
