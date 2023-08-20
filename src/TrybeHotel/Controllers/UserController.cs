@@ -1,3 +1,4 @@
+#nullable disable
 using Microsoft.AspNetCore.Mvc;
 using TrybeHotel.Models;
 using TrybeHotel.Repository;
@@ -19,9 +20,11 @@ namespace TrybeHotel.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(Roles = "admin")]
         public IActionResult GetUsers()
         {
-            throw new NotImplementedException();
+            return Ok(_repository.GetUsers());
         }
 
         [HttpPost]
