@@ -1,3 +1,4 @@
+#nullable disable
 using TrybeHotel.Models;
 using TrybeHotel.Dto;
 using Microsoft.EntityFrameworkCore;
